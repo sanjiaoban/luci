@@ -15,14 +15,8 @@ on:
 
 jobs:
   build:
-    name: Test ${{ matrix.arch }}
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - arch: x86_64
-            target: x86-64
+    if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
       - uses: actions/checkout@v2
