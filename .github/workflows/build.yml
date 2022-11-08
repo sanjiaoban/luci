@@ -19,9 +19,8 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@master
 
       - name: Determine branch name
         run: |
